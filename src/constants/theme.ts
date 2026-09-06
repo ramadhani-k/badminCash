@@ -1,26 +1,33 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
-import '@/global.css';
-
 import { Platform } from 'react-native';
+
+export const OliveTheme = {
+  primary: '#71832A', // Main Olive Green
+  primaryDark: '#505E1C',
+  primaryLight: '#E3ECBA',
+  background: '#F5F6EC',
+  card: '#FFFFFF',
+  cardSecondary: '#EEF2D8',
+  text: '#273111',
+  textMuted: '#67724C',
+  border: '#D8E0B5',
+  success: '#4A8B3B',
+  badgeBg: '#DFF0D8',
+};
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#273111',
+    background: '#F5F6EC',
+    backgroundElement: '#FFFFFF',
+    backgroundSelected: '#E3ECBA',
+    textSecondary: '#67724C',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#F5F6EC',
+    background: '#1A200B',
+    backgroundElement: '#2B3314',
+    backgroundSelected: '#404B1D',
+    textSecondary: '#A3B082',
   },
 } as const;
 
@@ -28,13 +35,9 @@ export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
